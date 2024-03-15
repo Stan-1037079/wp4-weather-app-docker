@@ -1,0 +1,5 @@
+Start the docker compose set up
+First go to the directory with the yaml file it 
+cd wp4-weather-app
+In terminal run the following command docker-compose up -d
+Run localhost from dockerhub 
