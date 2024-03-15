@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  react:
+    build: 
+      context: ./react-app
+      args:
+        - REACT_APP_API_URL=http://flask:5000
+    ports:
+      - "3000:80"
+    depends_on:
+      - flask
+  
+  flask:
+    build: ./flask-app
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./flask-app:/app
+      - ./flask-app/Weatherdatabase.db:/app/Weatherdatabase.db
